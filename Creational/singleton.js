@@ -6,4 +6,19 @@
 
 class Singleton {
 
+  constructor(data) {
+    if (!Singleton.instance) {
+      Singleton.instance = data;
+    }
+  }
+
+  getInstance() {
+    return Singleton.instance;
+  }
 }
+
+var s1 = new Singleton('s1');
+var s2 = new Singleton('s2');
+
+console.log(s1.getInstance());
+console.log(s2.getInstance());
